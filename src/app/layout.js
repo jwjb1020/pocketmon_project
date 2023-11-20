@@ -1,8 +1,6 @@
-
 import Link from 'next/link'
 import './globals.css'
-
-
+import Header from '@/components/header'
 
 export const metadata = {
   title: 'Pocketmon Project',
@@ -11,13 +9,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html>
+     
       <body >
-        <div>
-          <Link href="/">homepage</Link>
-          <Link href="/list">List</Link>
-        </div>
-        {children}</body>
+      <Header/>
+        {children}
+      </body>
     </html>
   )
 }
