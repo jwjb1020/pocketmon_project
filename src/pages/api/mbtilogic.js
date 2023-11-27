@@ -1,10 +1,9 @@
 import connectDB from "@/db/db";
 
 export default async function handler(req, res) {
-  const { method, query } = req;
-  const id = query.id;
-
-  if (method === "GET") {
+  
+  if (req.method === "GET") {
+    const id = req.query.id;
     const db = await connectDB();
     const [question] = await db.query("select * from mbtiq where id =?", [id]);
     const [answers] = await db.query("select answer,class from mbtia where mbtino = ?", [id]);
