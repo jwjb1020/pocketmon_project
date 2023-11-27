@@ -8,7 +8,9 @@ export default function Layout({ children }) {
   const router = useRouter();
 
   function returnTest() {
+    // 전역변수 리셋 
     resetClass();
+    // 다시하기 
     router.push("/mbti");
   }
 
