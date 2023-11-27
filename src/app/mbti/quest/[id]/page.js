@@ -16,8 +16,7 @@ export default function Question(props) {
   const {classList,pushClass,resetClass} = useStoreClass();
   
 
-  // 비동기 함수를 선언하여 데이터를 가져오는 로직을 작성합니다.
- // 초기화
+// 비동기 함수를 선언하여 데이터를 가져오는 로직을 작성합니다.
 useEffect(() => {
   fetch(`/api/mbtilogic?id=${id}`, { method: "GET" })
     .then((res) => res.json())
@@ -25,7 +24,7 @@ useEffect(() => {
       // console.log(classList)
       // console.log("len",classList.length)
       setData(res);
-    
+      console.log(classList)
    
     })
   
@@ -45,6 +44,7 @@ function handleNextQuestion(index) {
       const selectedClass = data.answers[index].class;
       pushClass(selectedClass)
       router.push(`/mbti/quest/${nextId}`, { method: "GET" });
+      
        // 리스트가 12개이면 pocketmon 페이지로 이동
       if(nextId==13){
       console.log("good")
@@ -54,9 +54,6 @@ function handleNextQuestion(index) {
      
     });
 }
-  
-  
- 
 
   // 데이터가 없을 때 로딩 메시지를 출력합니다.
   if (!data) {
