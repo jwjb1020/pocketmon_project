@@ -50,11 +50,19 @@ export default function Pocketmon(){
     return (
         <div className="flex justify-center items-center">
           <div className="bg-white p-8 shadow-lg rounded-lg">
+            {data.img<500 ?
             <img
-              className="border border-black mx-auto mb-4"
-              src={`/images/poketmon${data.img}.png`}
-              alt={data.pocketmon}
-            />
+            className="border border-black mx-auto mb-4"
+            src={`/images/divide1/poketmon${data.img}.png`}
+            alt={data.pocketmon}
+          />
+        :  <img
+        className="border border-black mx-auto mb-4"
+        src={`/images/divide2/poketmon${data.img}.png`}
+        alt={data.pocketmon}
+      />
+        }
+            
             <div className="text-center">
               <p className="text-xl font-bold mb-2">포켓몬 : {data.pocketmon}</p>
               <p className="text-lg mb-2">별명 : {data.name}</p>
