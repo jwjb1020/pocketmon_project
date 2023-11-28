@@ -1,12 +1,14 @@
 "use client"
 
+import useStoreClass from "@/stores/store";
 import { useRouter } from "next/navigation";
 
 export default function Mbti(){
     const router = useRouter();
+    const { resetClass } = useStoreClass();
     const startTest=()=>{
-        router.push("/mbti/quest/1")
-        
+        router.push("/mbti/quest/1");
+        resetClass();
     };
 
     return(
